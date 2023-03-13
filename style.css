@@ -8,11 +8,71 @@ body {
     background-color: #fff8dd;
 }
 
+/* 작은 화면에서 나타날 토글 navbar */
+/* 토글바 기본 디자인 */
+.navbar-toggle {
+    display: none;
+}
+
+.navicon {
+    cursor: pointer;
+    height: 60px;
+    padding: 28px 15px;
+    position: absolute;
+    top: 0; right: 0;
+    display: none;
+}
+
+.navicon-list {
+    display: block;
+    width: 20px;
+    height: 3px;
+    background-color: #333;
+    position: relative;
+    transition: background-color .2s ease-out;
+}
+
+.navicon-list::before,
+.navicon-list::after {
+  background-color: #333;
+  content: "";
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  transition: .2s ease-in;
+}
+
+.navicon-list::before {
+    top: -7px;
+}
+
+.navicon-list::after {
+    top: 7px;
+}
+
+/* 토글바가 클릭 되었을 때 */
+.navbar-toggle:checked ~ .navicon > .navicon-list {
+    background: transparent;
+}
+
+ .navbar-toggle:checked ~ .navicon > .navicon-list::before {
+    transform: rotate(45deg);
+    top: 0;
+}
+
+.navbar-toggle:checked ~ .navicon > .navicon-list::after {
+    transform: rotate(-45deg);
+    top: 0;
+} 
+
+/* navigation bar 기본 디자인 */
 .navbar {
     width: 100%;
     height: 60px;
     background-color: #FADF72;
     box-shadow: 0 2px 2px rgba(0, 0, 0, 0.05), 0 6px 0 rgba(0, 0, 0, 0.05);
+    transition: all 0.5s;
 }
 
 .navbar-logo {
@@ -21,7 +81,6 @@ body {
 }
 
 .navbar-list {
-    height: 100%;
     float: right;
 }
 
@@ -35,15 +94,19 @@ body {
     line-height: 60px;
     padding: 10px 15px;
     color: rgba(0, 0, 0, 0.5);
+    transition: 0.3s;
 }
 
 .navbar-list > li > a:hover {
     color: rgba(0, 0, 0, 0.9);
+    font-size: larger;
+    font-weight: bolder;
 }
 
+/* 미디어 쿼리를 이용한 반응형 웹 디자인 */
 @media screen and (max-width : 600px) {
     .navbar {
-        height: 120px;
+        height: 130px;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -51,9 +114,42 @@ body {
     }
     
     .navbar-logo {
+        display: block;
+    }
+      
+}
+
+@media screen and (max-width : 450px) {
+    .navbar {
+        height: 60px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
     }
 
     .navbar-list {
+        display: none;
     }
-      
+
+    .navicon {
+        display: block;
+    }
+
+    .navbar-toggle:checked ~ .navbar-list {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+        background-color: #fff;
+        box-shadow: 0 2px 2px rgba(0, 0, 0, 0.05), 0 3px 0 rgba(0, 0, 0, 0.05);
+    }
+
+    .navbar-list > li > a {
+        padding: 10px 100px;
+    }
+    
+    .navbar-list > li:hover {
+        border-top: 2px solid rgba(0, 0, 0, 0.05);
+        border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+    }
 }
