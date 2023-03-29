@@ -1,24 +1,51 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="card.css" />
     <title>CSS PLAYGROUND</title>
-</head>
-<body>
+  </head>
+  <body>
+    <!-- navbar 꾸미기-->
     <nav class="navbar">
-        <input class="navbar-toggle" id="navbar-toggle" type="checkbox">
-        <label class="navicon" for="navbar-toggle"><span class="navicon-list"></span></label>
-        <div class="navbar-logo"><img src="./image/logo.png" height="36px"></div>
-                <ul class="navbar-list">
-                <li><a href="#">Hello</a></li>
-                <li><a href="#">CSS</a></li>
-                <li><a href="#">Let's</a></li>
-                <li><a href="#">Playing</a></li>
-        </ul>
+      <input class="navbar-toggle" id="navbar-toggle" type="checkbox" />
+      <label class="navicon" for="navbar-toggle"
+        ><span class="navicon-list"></span
+      ></label>
+      <div class="navbar-logo">
+        <img src="./image/logo.png" height="36px" />
+      </div>
+      <ul class="navbar-list">
+        <li><a href="#">Hello</a></li>
+        <li><a href="#">CSS</a></li>
+        <li><a href="#">Let's</a></li>
+        <li><a href="#">Playing</a></li>
+      </ul>
     </nav>
-    
-</body>
+
+    <!-- contant 꾸미기 -->
+    <section class="cards">
+      <div class="card">
+        <header class="card_header">
+          <img src="./image/bootstrap.png" />
+        </header>
+        <div class="card_body">
+          <span>Bootstrap</span>
+          <p>
+            부트스트랩 사용해보고싶어서 만들어본 간단한 페이지.<br />
+            팬톤의 올해의 컬러를 이용해 꾸며주었다. 네비게이션바, 레이아웃형식의
+            사용을 중점으로 구성하였다.
+          </p>
+        </div>
+        <footer class="card_footer">
+          <button class="card_btn">
+            <a href="./bootstap.html">Go</a>
+          </button>
+        </footer>
+      </div>
+    </section>
+  </body>
 </html>
