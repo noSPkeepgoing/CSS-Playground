@@ -155,4 +155,8 @@ body {
     border-top: 2px solid rgba(0, 0, 0, 0.05);
     border-bottom: 2px solid rgba(0, 0, 0, 0.05);
   }
+
+  .card {
+    z-index: -1;
+  }
 }
